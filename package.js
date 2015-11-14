@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'codefabric:common',
+  name: 'codefabric:meteor-common',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -58,7 +58,7 @@ Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('coffeescript');
   api.use('tinytest');
-  api.use('codefabric:common');
+  api.use('codefabric:meteor-common');
 
   api.addFiles('tests/client/tests.coffee', 'client');
   api.addFiles('tests/server/tests.coffee', 'server');

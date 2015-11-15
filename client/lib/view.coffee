@@ -4,23 +4,31 @@ namespace 'CodeFabric', (ns) ->
     constructor: (template) ->
       @template = template
 
-      @onCreated = ->
-      @onRendered = ->
-      @onDestroyed = ->
+      @template.onCreated @__onCreated
+      @template.onRendered @__onRendered
+      @template.onDestroyed @__onDestroyed
 
-      @template.onCreated = @__onCreated
-      @template.onRendered = @__onRendered
-      @template.onDestroyed = @__onDestroyed
+      # Automatically expose instance vars and functions as helpers - good idea?
+      @template.helpers @
 
-    __onCreated: (e) ->
+
+    __onCreated: (e) =>
       if @onCreated?
         @onCreated(e)
-    __onRendered: (e) ->
+
+      return
+
+    __onRendered: (e) =>
       if @onRendered?
         @onRendered(e)
-    __onDestroyed: ->
+
+      return
+
+    __onDestroyed: (e) =>
       if @onDestroyed?
         @onDestroyed(e)
+
+      return
 
   return CodeFabric.Resolver.depends
     name: 'View'

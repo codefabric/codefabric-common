@@ -61,6 +61,11 @@ Package.onTest(function(api) {
   api.use('tinytest');
   api.use('codefabric:meteor-common');
 
-  api.addFiles('tests/client/tests.coffee', 'client');
+  api.addFiles([
+    'tests/client/lib/extensions/arrayExtensionTests.coffee',
+    'tests/client/lib/helpers/mathHelperTests.coffee',
+    'tests/client/lib/helpers/utilHelperTests.coffee',
+    'tests/client/tests.coffee'
+  ], 'client');
   api.addFiles('tests/server/tests.coffee', 'server');
 });

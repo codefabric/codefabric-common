@@ -5,10 +5,18 @@ namespace 'CodeFabric', (ns) ->
       sorted = @
       for field, dir of sort
         sorted = sorted.sort (a, b) ->
+          if typeof a[field] is 'undefined' or typeof b[field] is 'undefined'
+            return 0
           if dir == 1
-            return a[field] >= b[field]
+            if a[field] >= b[field]
+              return 1
+            else
+              return -1
           else if dir == -1
-            return a[field] < b[field]
+            if a[field] < b[field]
+              return 1
+            else
+              return -1
           else
             return 0
 

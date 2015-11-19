@@ -1,17 +1,19 @@
 # tests.coffee
+namespace 'CodeFabric', (ns) ->
 
-
-
-Tinytest.add 'Can an object extend Model and also include a data class?', (test) ->
-  Data =
-    oneProp: 1
-    twoProp: -> 2
-
-  class FakeModel extends CodeFabric.Model
+  class FakeModel extends ns.Model
     constructor: (data) ->
       @extend data
 
+      super()
 
-  underTest = new FakeModel(Data)
-  test.equal underTest.oneProp, 1
-  test.equal underTest.twoProp(), 2
+  Tinytest.add 'Can an object extend Model and also include a data class?', (test) ->
+    Data =
+      oneProp: 1
+      twoProp: -> 2
+
+    underTest = new FakeModel(Data)
+    test.equal underTest.oneProp, 1
+    test.equal underTest.twoProp(), 2
+
+ return

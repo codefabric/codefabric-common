@@ -30,7 +30,7 @@ namespace 'CodeFabric', (ns) ->
 
       return
 
-  return CodeFabric.Resolver.depends
+  return ns.Resolver.depends
     name: 'View'
     constructor: View
     dependencies:

@@ -40,7 +40,7 @@ namespace 'CodeFabric', (ns) ->
       value = item
       for path in paths
         if value[path]
-          value = item[path]
+          value = value[path]
         else
           return null
 

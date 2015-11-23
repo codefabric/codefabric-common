@@ -8,10 +8,11 @@ namespace 'CodeFabric', (ns) ->
         console.log "Registering dependencies and constructor for #{def.name}"
 
       result.push def.name
-      result.push def.constructor
+      result.push def.instance || def.constructor
       
       Resolver.registrations[def.name] = 
         constructor: def.constructor
+        instance: def.instance
         dependencies: def.dependencies
 
       return result
@@ -39,6 +40,9 @@ namespace 'CodeFabric', (ns) ->
           console.log "Found arg for #{name}: #{value}"
 
         return value
+
+      if reg.instance?
+        return reg.instance
 
       constructorArgs = [reg.constructor]
       for argName, dep of reg.dependencies

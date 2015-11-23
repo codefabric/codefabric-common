@@ -36,3 +36,12 @@ namespace 'CodeFabric', (ns) ->
       return filtered
 
     return @
+
+  Array::unique = (keyFunc) ->
+    output = {}
+    if keyFunc?
+      output[keyFunc(@[key])] = @[key] for key in [0...@length]
+    else
+      output[@[key]] = @[key] for key in [0...@length]
+      
+    return (value for key, value of output)

@@ -40,6 +40,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/namespaceBuilder.js',
     'lib/resolver.coffee',
+    'lib/extensions/arrayExtensions.coffee',
     'lib/syntax.coffee',
     'lib/validation/checkValidators.coffee',
     'lib/base.coffee',
@@ -48,7 +49,6 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'client/lib/view.coffee',
-    'client/lib/extensions/arrayExtensions.coffee',
     'client/lib/helpers/utilities.coffee',
     'client/lib/helpers/development.coffee',
     'client/lib/helpers/math.coffee'

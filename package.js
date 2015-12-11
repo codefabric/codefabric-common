@@ -1,6 +1,6 @@
 Package.describe({
   name: 'codefabric:meteor-common',
-  version: '0.0.1',
+  version: '0.1.0',
   // Brief, one-line summary of the package.
   summary: 'Useful utilities and base classes for writing Meteor packages',
   git: 'https://github.com/codefabric/codefabric-meteor-common.git',
